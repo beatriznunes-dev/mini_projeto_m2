@@ -1,3 +1,0 @@
-DB_DIALECT=sqlite
-DB_STORAGE=database.sqlite
-PORT=3000

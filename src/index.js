@@ -3,11 +3,11 @@ process.stdout.write('\uFEFF');
 require('dotenv').config();
 const express = require("express");
 const sequelize = require('./database');
-const routes = require('./routes');
+const tarefaRoutes = require('./routes/tarefaRoutes');
 
 const app = express();
 app.use(express.json());
-app.use('/api', routes);
+app.use('/api', tarefaRoutes);
 
 const PORT = process.env.PORT || 3000;
 
