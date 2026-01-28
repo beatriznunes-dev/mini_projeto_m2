@@ -10,7 +10,10 @@ const tarefaRoutes = require('./routes/tarefaRoutes');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND,
+  credentials: true
+}));
 
 app.use('/api', tarefaRoutes);
 
