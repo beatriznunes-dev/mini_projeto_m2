@@ -16,3 +16,4 @@ utilizando Express, Sequelize e SQLite.
 1. Instale as dependências:
 ```bash
 npm install
+# mini_projeto_m3_front
