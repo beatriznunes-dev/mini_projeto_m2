@@ -9,13 +9,16 @@ const tarefaRoutes = require('./routes/tarefaRoutes');
 
 const app = express();
 
-const corsOptions = {
-  origin: process.env.FRONTEND.split(','),
-  credentials: true
-};
+
+app.use(cors({
+  origin: '*'
+}));
 
 app.use(express.json());
-app.use(cors(corsOptions));
+
+app.get('/', (req, res) => {
+  res.send('API de Tarefas rodando ');
+});
 
 app.use('/api', tarefaRoutes);
 
@@ -30,4 +33,4 @@ sequelize.sync({ force: false })
   })
   .catch(error => {
     console.error('Erro ao sincronizar banco:', error);
-  })
+  });
